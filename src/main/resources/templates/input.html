@@ -29,9 +29,8 @@
         <div class="form-group">
           <label for="customerName">氏名</label>
           <input type="text" id="customerName" name="customerName" th:field="*{customerName}" class="form-control" value="山田太郎"/>
-          <ul th:if="${#fields.hasErrors('customerName')}">
-            <li th:each="err : ${#fields.errors('customerName')}" th:text="${err}"></li>
-          </ul>
+          <div class="text-danger" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></div>
+          
         </div>
         <div class="form-group">
           <label for="tel">連絡先TEL</label>
