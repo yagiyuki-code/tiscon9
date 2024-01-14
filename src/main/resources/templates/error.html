@@ -18,11 +18,19 @@
 <nav th:insert="header.html :: header"></nav>
 <div class="container">
 
-    <div class="container" layout:fragment="content">
+    <div class="container text-center my-3" layout:fragment="content">
         <div id="information" class="alert alert-danger alert-dismissible">
             段ボール数の上限を超えました。
         </div>
     </div>
+
+    <div class="container text-center my-3" layout:fragment="content">
+      <div id="information" class="alert alert-light alert-dismissible">
+          上限数を超えた見積もりは、お電話でご対応できます。<br>
+          ご希望の方は、<strong>XXXX-XX-XXXX</strong>までおかけください。
+      </div>
+    </div>
+
 
     <form th:action="@{/result}" th:object="${userOrderForm}" class="form-horizontal" method="post">
         <!-- <div class="progress-icon">
