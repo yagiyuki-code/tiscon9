@@ -106,9 +106,12 @@ public class EstimateDao {
         } catch (IncorrectResultSizeDataAccessException e) {
             distance = 0;
         }
+        if(distance==0) {
+            distance=50;
+        }
         return distance;
     }
-
+   
     /**
      * 荷物ごとの段ボール数を取得する。
      *
